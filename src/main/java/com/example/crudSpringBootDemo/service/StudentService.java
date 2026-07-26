@@ -1,9 +1,7 @@
 package com.example.crudSpringBootDemo.service;
-
 import com.example.crudSpringBootDemo.entity.Student;
 import com.example.crudSpringBootDemo.repository.StudentRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +26,7 @@ public class StudentService {
         return null;
     }
     public List<Student> getAllStudent (){
-        List<Student> studentList = studentRepository.findAllAndDeletedIsFalse();
+        List<Student> studentList = studentRepository.findByDeletedIsFalse();
         return studentList;
     }
 
